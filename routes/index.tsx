@@ -168,7 +168,7 @@ export default function Home() {
       >
         {fileNames.map((file) => {
           return <li key ={file} >
-            <img class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
+            <img loading="lazy" class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
           </li>
         })}
       </ul>
