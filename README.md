@@ -1,10 +1,12 @@
-# fresh project
+# Graphic Design Portfolio
 
-### Usage
+Built using Deno/Fresh
+
+## Usage
 
 Start the project:
 
-```
+```sh
 deno task start
 ```
 
