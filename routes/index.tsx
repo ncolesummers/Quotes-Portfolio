@@ -163,10 +163,10 @@ export default function Home() {
       </h1>
       <ul
         class={tw
-          `grid grid-flow-dense shadow-sm gap-3 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5`}
+          `grid grid-flow-dense shadow-sm gap-3 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
       >
         {fileNames.map((file) => {
-          return <li key ={file} >
+          return <li class={tw`transition ease-in-out delay-100 hover:scale-125 hover:z-40`} key ={file} >
             <img loading="lazy" class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
           </li>
         })}
