@@ -156,21 +156,29 @@ export default function Home() {
     "2020-01-03_19-02-56_UTC.webp",
   ];
 
+  let eager = 0;
+  let dimension = "1080";
+
   return (
-    <div class={tw`p-4 container mx-auto max-w-screen-md`}>
+    <main class={tw`p-4 container mx-auto max-w-screen-md`}>
       <h1 class={tw`my-1.5 font-sans font-semibold text-4xl text-center`}>
         Quotes
       </h1>
       <ul
         class={tw
-          `grid grid-flow-dense shadow-sm gap-3 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
+          `grid grid-flow-dense gap-3 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
       >
         {fileNames.map((file) => {
-          return <li class={tw`transition ease-in-out delay-100 hover:scale-125 hover:z-40`} key ={file} >
-            <img loading="lazy" class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
+          return <li class={tw` shadow-sm transition ease-in-out delay-100 hover:scale-125 hover:z-40 focus:ring-2 hover:shadow-2xl`} key ={file} >
+            {eager++ < 8
+            ? <img width={dimension} height={dimension} class={tw`shadow rounded`} src={`./ncolesummers/${file}`}
+              alt="A graphic of a quote" />
+            : <img loading="lazy" width={dimension} height={dimension} class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
+          }
+            
           </li>
         })}
       </ul>
-    </div>
+    </main>
   );
 }
