@@ -1,6 +1,7 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
+import { Container } from "../components/container.tsx";
 export default function Home() {
   const fileNames: string[] = [
     "2022-06-14_01-55-33_UTC.webp",
@@ -157,10 +158,21 @@ export default function Home() {
   ];
 
   let eager = 0;
-  let dimension = "1080";
+  const dimension = "1080";
+
+  const meta = {
+    canonical: "http://quotes.ncolesummers.com",
+    meta: {
+      charset: "utf-8",
+      name: {
+        keywords: "preact,fresh,quotes,meta,document,html,tags",
+      },
+    },
+  }
 
   return (
-    <main class={tw`p-4 container mx-auto max-w-screen-md`}>
+    <Container {...meta}>
+    <div class={tw`p-4 container mx-auto max-w-screen-md`}>
       <h1 class={tw`my-1.5 font-sans font-semibold text-4xl text-center`}>
         Quotes
       </h1>
@@ -179,6 +191,7 @@ export default function Home() {
           </li>
         })}
       </ul>
-    </main>
+    </div>
+    </Container>
   );
 }
