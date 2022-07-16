@@ -1,7 +1,9 @@
 /** @jsx h */
 import { h } from "preact";
 import { tw } from "@twind";
+import { asset } from "$fresh/runtime.ts";
 import { Container } from "../components/container.tsx";
+
 export default function Home() {
   const fileNames: string[] = [
     "2022-06-14_01-55-33_UTC.webp",
@@ -183,9 +185,9 @@ export default function Home() {
         {fileNames.map((file) => {
           return <li class={tw` shadow-sm transition ease-in-out delay-100 hover:scale-125 hover:z-40 focus:ring-2 hover:shadow-2xl`} key ={file} >
             {eager++ < 8
-            ? <img width={dimension} height={dimension} class={tw`shadow rounded`} src={`./ncolesummers/${file}`}
+            ? <img width={dimension} height={dimension} class={tw`shadow rounded`} src={asset(`./ncolesummers/${file}`)}
               alt="A graphic of a quote" />
-            : <img loading="lazy" width={dimension} height={dimension} class={tw`shadow rounded`} src={`./ncolesummers/${file}`} alt="A graphic of a quote" />
+            : <img loading="lazy" width={dimension} height={dimension} class={tw`shadow rounded`} src={asset(`./ncolesummers/${file}`)} alt="A graphic of a quote" />
           }
             
           </li>
